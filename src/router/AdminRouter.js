@@ -11,9 +11,11 @@ import { Clients } from "../pages/admin/Clients";
 import { Menu } from "../pages/admin/Menu";
 
 import { AdminLayout } from "../layouts/AdminLayout";
+import { useAuth } from "../hooks";
 
-const user = { email: "imjuanfe22@gmail.com" };
 export const AdminRouter = () => {
+  console.log(useAuth());
+  const {user} = useAuth();
   const paths = ["/admin", "/admin/home"];
   const loadLayout = (Layout, Page) => {
     return (
@@ -25,7 +27,7 @@ export const AdminRouter = () => {
   return (
     <Routes>
       {!user ? (
-        <Route path="/admin/*" element={loadLayout(AdminLayout, Auth)} />
+        <Route path="/admin/*" element={<Auth/>} />
       ) : (
         <>
           {map(paths, (path) => (
