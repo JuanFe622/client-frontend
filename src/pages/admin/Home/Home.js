@@ -1,9 +1,9 @@
 import React from 'react'
 
-export const Menu = () => {
+export const Home = () => {
   return (
     <div>
-        <h1>Estamos en Menu</h1>
+        <h1>Home works!</h1>
     </div>
   )
 }
