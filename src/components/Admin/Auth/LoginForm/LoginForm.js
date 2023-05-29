@@ -32,6 +32,8 @@ export const LoginForm = () => {
     <Form className="register-form" onSubmit={formik.handleSubmit}>
       <Form.Input
         name="email"
+        type="email"
+        label="Correo electrónico"
         placeholder="Correo electrónico"
         autoComplete="email"
         onChange={formik.handleChange}
@@ -41,6 +43,7 @@ export const LoginForm = () => {
       <Form.Input
         name="new_password"
         type="password"
+        label="Contraseña"
         autoComplete="new_password"
         placeholder="Contraseña"
         onChange={formik.handleChange}

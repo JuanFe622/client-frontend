@@ -1,43 +1,75 @@
 @import '~/src/scss/index.scss';
 
 .auth {
-    background-image: url('../../../assets/jpg/auth-bg.jpg');
-    min-height: 100vh;
-    background-position: center;
-    /* background-size: contain;  */
-    background-size: cover;
     display: flex;
-    align-items: center;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 120px;
+    text-align: center;
+  }
+  
+  .auth .logo {
+    width: 200px;
+    height: auto;
+    object-fit: contain;
+    margin-right: 20px;
+    flex-shrink: 0;
+  }
+  
+  .auth .auth__form {
+    flex: 1;
+    display: flex;
     flex-direction: column;
-    padding-top: 100px;
-
-    .logo {
-        width: 100px;
-        margin-bottom: 20px;
-    }
-
-    &__form {
-        display: flex;
-        width: 450px;
-        flex-direction: column;
-        align-items: center;
-        margin-top: 20px;
-
-        .ui.menu {
-            .tem {
-                width: 50%;
-                justify-content: center;
-                background-color: aliceblue !important;
-                border-radius: 0 !important;
-                border-top: 4px solid $border-grey !important;
-                font-size: 18px;
-
-                &.active {
-                    font-weight: normal;
-                    border-radius: 0 !important;
-                    border-top-color: $primary !important;
-                }
-            }
-        }
-    }
-}
+    align-items: flex-start;
+    justify-content: center;
+  }
+  
+  /* Resto de estilos... */
+  
+  .auth .auth__form .ui.segment {
+    border: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .auth .auth__form .ui.menu {
+    background-color: #f5f5f5;
+    border: none;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .auth .auth__form .ui.menu .item {
+    font-weight: bold;
+    color: #555555;
+  }
+  
+  .auth .auth__form .ui.menu .item.active {
+    color: #000000;
+    border-bottom: 2px solid #000000;
+  }
+  
+  .auth .auth__form .ui.tab.segment {
+    padding: 20px;
+    border: none;
+    background-color: #f5f5f5;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .auth .auth__form .ui.tab.segment .register-form,
+  .auth .auth__form .ui.tab.segment .login-form {
+    max-width: 300px;
+    margin: 0 auto;
+  }
+  
+  .auth .auth__form .ui.tab.segment .register-form .form-button,
+  .auth .auth__form .ui.tab.segment .login-form .form-button {
+    margin-top: 20px;
+  }
+  
+  .auth .auth__form .ui.tab.segment .error-message {
+    color: red;
+    margin-top: 10px;
+  }
+  

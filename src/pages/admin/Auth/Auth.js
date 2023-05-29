@@ -5,7 +5,6 @@ import { RegisterForm, LoginForm } from "../../../components/Admin/Auth";
 import "./Auth.scss";
 
 export const Auth = () => {
-  /* Para que cuando el usuario se registre pase a login */
   const [activeIndex, setActiveIndex] = useState(0);
   const openLogin = () => {
     setActiveIndex(0);
@@ -17,7 +16,7 @@ export const Auth = () => {
       menuItem: "Ingresar",
       render: () => {
         return (
-          <Tab.Pane>
+          <Tab.Pane className="auth__form-panel">
             <LoginForm />
           </Tab.Pane>
         );
@@ -27,13 +26,14 @@ export const Auth = () => {
       menuItem: "Registrarse",
       render: () => {
         return (
-          <Tab.Pane>
+          <Tab.Pane className="auth__form-panel">
             <RegisterForm openLogin={openLogin} />
           </Tab.Pane>
         );
       },
     },
   ];
+
   return (
     <div className="auth">
       <img src={image.logo} alt="" className="logo" />

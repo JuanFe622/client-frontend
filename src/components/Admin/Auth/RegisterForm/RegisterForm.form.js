@@ -4,6 +4,8 @@ export const initialValues = () => {
   return {
     firstname: "",
     lastname: "",
+    departament: "",
+    city: "",
     email: "",
     new_password: "",
     confirmPassword: "",
@@ -17,6 +19,10 @@ export function validationSchema(){
       .required("El nombre es requerido"),
     lastname: Yup.string()
       .required("El apellido requerido"),
+    // department: Yup.string()
+    //   .required("El departamento es requerido"),
+    // city: Yup.string()
+    //   .required("La ciudad es requerida"),
     email: Yup.string()
       .email("El correo no es válido")
       .required("Campo requerido"),

@@ -17,6 +17,7 @@ export const AdminRouter = () => {
   console.log(useAuth());
   const {user} = useAuth();
   const paths = ["/admin", "/admin/home"];
+
   const loadLayout = (Layout, Page) => {
     return (
       <Layout>
@@ -24,6 +25,7 @@ export const AdminRouter = () => {
       </Layout>
     );
   };
+  
   return (
     <Routes>
       {!user ? (
