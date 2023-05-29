@@ -20,12 +20,18 @@ export class Auth {
     try {
       const response = await fetch(url, params);
       if (!response.ok) {
-        throw new Error("Error en la solicitud: " + response.status);
+        let errorMessage = "Error en la solicitud.";
+        if (response.status === 400) {
+          const errorData = await response.json();
+          errorMessage = errorData.msg || errorMessage;
+        }
+        throw new Error(errorMessage);
       }
       const result = await response.json();
       return result;
     } catch (error) {
       console.error(error);
+      window.alert("Error en la solicitud: " + error.message);
       throw error;
     }
   };
@@ -44,12 +50,18 @@ export class Auth {
     try {
       const response = await fetch(url, params);
       if (!response.ok) {
-        throw new Error("Error en la solicitud: " + response.status);
+        let errorMessage = "Error en la solicitud.";
+        if (response.status === 400) {
+          const errorData = await response.json();
+          errorMessage = errorData.msg || errorMessage;
+        }
+        throw new Error(errorMessage);
       }
       const result = await response.json();
       return result;
     } catch (error) {
       console.error(error);
+      window.alert("Error en la solicitud: " + error.message);
       throw error;
     }
   };

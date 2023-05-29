@@ -52,7 +52,7 @@ export const MenuSider = (props) => {
 
   const itemRender = (item, index) => {
     const { icon, label, subMenu } = item;
-    const isSelected = location.pathname === item.key;
+    const isSelected = location.pathname.includes(item.key.toLowerCase());
     if (subMenu) {
       return (
         <Menu.SubMenu key={item.key} icon={icon} title={label}>
@@ -81,7 +81,7 @@ export const MenuSider = (props) => {
       <Menu
         mode="inline"
         onClick={navigateTo}
-        defaultSelectedKeys={[location.pathname]}
+        selectedKeys={[location.pathname]}
         defaultOpenKeys={menuItems
           .filter((item) => item.subMenu)
           .map((item) => item.key)}

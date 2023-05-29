@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import '../../../scss/map.scss'
 
 export const Home = () => {
   const navigate = useNavigate();

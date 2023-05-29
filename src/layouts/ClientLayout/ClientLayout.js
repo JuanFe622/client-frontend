@@ -1,11 +1,13 @@
-import React, {useState} from "react";
+import React from "react";
 
 export const ClientLayout = (props) => {
   const { children } = props;
   return (
     <div>
-      <h2>ClientLayout works!</h2>
+      <center>
+      <h2>Bienvenido a MAP</h2>
       <div>{children}</div>
+      </center>
     </div>
   );
 };

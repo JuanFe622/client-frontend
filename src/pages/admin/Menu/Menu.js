@@ -1,8 +1,9 @@
-import React, { useState, useRef } from "react";
+import React, { useRef } from "react";
 import { useNavigate } from "react-router-dom";
 
 export const Menu = () => {
-    const pendientesRef = useRef(null);
+  const navigate = useNavigate();
+  const pendientesRef = useRef(null);
   const listosRef = useRef(null);
 
   const moveSelectedItems = (from, to) => {
@@ -79,7 +80,7 @@ export const Menu = () => {
           </div>
 
           <div className="form-group form-buttons">
-            <input type="button" value="Continuar" />
+            <input type="button" value="Continuar" onClick={() => navigate("/admin/services")}/>
             <input type="reset" value="Limpiar" />
           </div>
         </form>
